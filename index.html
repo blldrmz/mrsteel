@@ -8,7 +8,9 @@
 <meta name="theme-color" content="#1e1f23">
 <meta property="og:title" content="MR Steel — Steel Construction">
 <meta property="og:description" content="20+ Years of Experience. Strong Steel. Solid Future. Batumi · Tbilisi">
-<meta property="og:image" content="assets/logo.jpg">
+<meta property="og:image" content="https://mrsteel.ge/assets/logo.jpg">
+<meta property="og:url" content="https://mrsteel.ge/">
+<link rel="canonical" href="https://mrsteel.ge/">
 <meta property="og:type" content="website">
 <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
 <link rel="apple-touch-icon" href="assets/favicon.png">
@@ -114,17 +116,21 @@ section{padding:110px 0}
 .svc h3{font-size:1.25rem;margin-bottom:8px}
 .svc p{color:var(--muted);font-size:.95rem}
 
-/* References */
-.ref-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-.ref{border-radius:var(--radius);overflow:hidden;background:var(--panel);border:1px solid var(--line)}
-.ref .pic{aspect-ratio:4/3;position:relative;background:linear-gradient(160deg,#34353c,#1f2024);overflow:hidden}
-.ref .pic img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
-.ref:hover .pic img,.ref:hover .pic svg{transform:scale(1.05)}
-.ref .pic svg{width:100%;height:100%;transition:transform .5s}
-.ref .tag{position:absolute;left:14px;top:14px;background:rgba(30,31,35,.85);border:1px solid var(--line);padding:5px 11px;border-radius:999px;font-size:.76rem;color:var(--copper);font-weight:600}
-.ref .info{padding:18px 20px}
-.ref h3{font-size:1.1rem}
-.ref p{color:var(--muted);font-size:.88rem}
+/* References gallery */
+.gallery{columns:3 300px;column-gap:16px}
+.shot{position:relative;display:block;width:100%;margin:0 0 16px;break-inside:avoid;border-radius:var(--radius);overflow:hidden;border:1px solid var(--line);background:var(--panel);cursor:zoom-in;padding:0;font:inherit;color:inherit;text-align:left}
+.shot img{width:100%;transition:transform .6s ease}
+.shot:hover img{transform:scale(1.04)}
+.shot figcaption{position:absolute;inset:auto 0 0;padding:40px 16px 14px;background:linear-gradient(180deg,transparent,rgba(15,15,18,.88));font-weight:600;font-size:.92rem}
+.shot figcaption::before{content:"";display:block;width:22px;height:2px;background:var(--rust);margin-bottom:8px}
+.lb{position:fixed;inset:0;z-index:100;background:rgba(10,10,12,.94);display:none;align-items:center;justify-content:center;padding:60px 70px}
+.lb.open{display:flex}
+.lb img{max-width:100%;max-height:100%;border-radius:10px;box-shadow:0 30px 80px rgba(0,0,0,.6)}
+.lb p{position:absolute;left:0;right:0;bottom:18px;text-align:center;color:var(--muted);font-size:.92rem}
+.lb button{position:absolute;background:rgba(255,255,255,.08);border:1px solid var(--line);color:#fff;width:48px;height:48px;border-radius:50%;cursor:pointer;font-size:1.4rem;display:grid;place-items:center}
+.lb .x{top:16px;right:16px}.lb .pv{left:14px;top:50%;transform:translateY(-50%)}.lb .nx{right:14px;top:50%;transform:translateY(-50%)}
+.about-photo{border-radius:var(--radius);overflow:hidden;border:1px solid var(--line);aspect-ratio:4/3}
+.about-photo img{width:100%;height:100%;object-fit:cover}
 
 /* Contact */
 #contact{background:var(--bg-2)}
@@ -182,7 +188,7 @@ footer{padding:36px 0;border-top:1px solid var(--line)}
   .cta{justify-content:center}
   .hero .kicker{justify-content:center}
   .about-grid,.contact-grid{grid-template-columns:1fr}
-  .svc-grid,.ref-grid{grid-template-columns:repeat(2,1fr)}
+  .svc-grid{grid-template-columns:repeat(2,1fr)}
 }
 @media (max-width:640px){
   section{padding:80px 0}
@@ -193,7 +199,9 @@ footer{padding:36px 0;border-top:1px solid var(--line)}
   .stats-grid{grid-template-columns:1fr}
   .stat{border-right:0;border-bottom:1px solid var(--line);padding:20px 24px}
   .stat:last-child{border-bottom:0}
-  .svc-grid,.ref-grid,.cards{grid-template-columns:1fr}
+  .svc-grid,.cards{grid-template-columns:1fr}
+  .gallery{columns:2;column-gap:10px}.shot{margin-bottom:10px}.shot figcaption{font-size:.78rem;padding:30px 10px 10px}
+  .lb{padding:56px 10px}
   .btn{width:100%;justify-content:center}
   form{padding:22px}
 }
@@ -265,6 +273,7 @@ footer{padding:36px 0;border-top:1px solid var(--line)}
       <div class="slogan" data-i18n="slogan"></div>
     </div>
     <div class="values reveal">
+      <div class="about-photo"><img src="assets/projects/p02-t.jpg" alt="MR Steel — Batumi" loading="lazy" width="700" height="525"></div>
       <div class="value"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V8l7-5 7 5v13M9 21v-6h6v6"/></svg></div>
         <div><h3 data-i18n="v1t"></h3><p data-i18n="v1d"></p></div></div>
       <div class="value"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6l8-3z"/><path d="M9 12l2 2 4-4"/></svg></div>
@@ -293,7 +302,7 @@ footer{padding:36px 0;border-top:1px solid var(--line)}
       <h2 data-i18n="ref_title"></h2>
       <p data-i18n="ref_sub"></p>
     </div>
-    <div class="ref-grid" id="refGrid"></div>
+    <div class="gallery" id="refGrid"></div>
   </div>
 </section>
 
@@ -357,6 +366,8 @@ footer{padding:36px 0;border-top:1px solid var(--line)}
   </div>
 </footer>
 
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Gallery"><button class="x" aria-label="Close">×</button><button class="pv" aria-label="Previous">‹</button><img alt=""><button class="nx" aria-label="Next">›</button><p></p></div>
+
 <a class="wa-float" href="https://wa.me/995577481400" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor"><use href="#i-wa"/></svg></a>
 
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
@@ -366,17 +377,28 @@ footer{padding:36px 0;border-top:1px solid var(--line)}
 
 <script>
 /* ============================================================
-   REFERANSLAR — kendi projelerinizi buraya ekleyin.
-   img: "assets/projects/dosya.jpg" (boş bırakılırsa çizim gösterilir)
-   art: "frame" | "truss" | "tower" | "canopy"
+   REFERANSLAR — fotoğraflar assets/projects/ klasöründe.
+   Yeni proje: pXX.jpg (büyük) + pXX-t.jpg (küçük) ekleyip listeye satır yazın.
    ============================================================ */
 const REFERENCES = [
-  { img:"", art:"frame",  type:{tr:"Endüstriyel Tesis",en:"Industrial Plant",ru:"Промышленный объект",ka:"სამრეწველო ობიექტი"}, city:"batumi" },
-  { img:"", art:"truss",  type:{tr:"Lojistik Deposu",en:"Logistics Warehouse",ru:"Логистический склад",ka:"ლოგისტიკური საწყობი"}, city:"tbilisi" },
-  { img:"", art:"tower",  type:{tr:"Ticari Bina",en:"Commercial Building",ru:"Коммерческое здание",ka:"კომერციული შენობა"}, city:"batumi" },
-  { img:"", art:"truss",  type:{tr:"Hangar",en:"Hangar",ru:"Ангар",ka:"ანგარი"}, city:"tbilisi" },
-  { img:"", art:"canopy", type:{tr:"Özel Tasarım Çelik Yapı",en:"Custom Steel Structure",ru:"Индивидуальная конструкция",ka:"ინდივიდუალური ფოლადის ნაგებობა"}, city:"batumi" },
-  { img:"", art:"frame",  type:{tr:"Fabrika Binası",en:"Factory Building",ru:"Заводской корпус",ka:"ქარხნის შენობა"}, city:"tbilisi" }
+  ["p01",{tr:"Çelik kafes tonoz",en:"Steel lattice vault",ru:"Стальной сетчатый свод",ka:"ფოლადის ბადისებრი თაღი"}],
+  ["p02",{tr:"Çatı konstrüksiyonu · Batum",en:"Roof structure · Batumi",ru:"Кровельная конструкция · Батуми",ka:"სახურავის კონსტრუქცია · ბათუმი"}],
+  ["p03",{tr:"Kule konstrüksiyonu",en:"Tower structure",ru:"Конструкция башни",ka:"კოშკის კონსტრუქცია"}],
+  ["p04",{tr:"Uzay kafes çatı montajı",en:"Space frame roof assembly",ru:"Монтаж структурного покрытия",ka:"სივრცითი კარკასის სახურავის მონტაჟი"}],
+  ["p05",{tr:"Endüstriyel depo",en:"Industrial warehouse",ru:"Промышленный склад",ka:"სამრეწველო საწყობი"}],
+  ["p06",{tr:"Cam kubbe konstrüksiyonu",en:"Glass dome structure",ru:"Конструкция стеклянного купола",ka:"მინის გუმბათის კონსტრუქცია"}],
+  ["p07",{tr:"Geniş açıklıklı çatı",en:"Long-span roof",ru:"Большепролётное покрытие",ka:"დიდმალიანი სახურავი"}],
+  ["p08",{tr:"Yüksek kat çelik konstrüksiyon",en:"High-rise steel structure",ru:"Высотные металлоконструкции",ka:"მაღალსართულიანი ფოლადის კონსტრუქცია"}],
+  ["p09",{tr:"Panoramik asansör kuleleri",en:"Panoramic lift shafts",ru:"Панорамные лифтовые шахты",ka:"პანორამული ლიფტის შახტები"}],
+  ["p10",{tr:"Çatı makas montajı",en:"Roof frame assembly",ru:"Монтаж стропильных рам",ka:"სახურავის ჩარჩოს მონტაჟი"}],
+  ["p11",{tr:"Atölyede imalat",en:"Workshop fabrication",ru:"Производство в цехе",ka:"დამზადება საამქროში"}],
+  ["p12",{tr:"Çelik kiriş güçlendirme",en:"Steel beam reinforcement",ru:"Усиление стальными балками",ka:"ფოლადის კოჭებით გაძლიერება"}],
+  ["p13",{tr:"Çelik iskelet ve döşeme",en:"Steel frame and decking",ru:"Стальной каркас и перекрытие",ka:"ფოლადის კარკასი და გადახურვა"}],
+  ["p14",{tr:"Çelik çatı sistemi",en:"Steel roof system",ru:"Стальная кровельная система",ka:"ფოლადის სახურავის სისტემა"}],
+  ["p15",{tr:"Çelik çatı iskeleti",en:"Steel roof framing",ru:"Стальной каркас кровли",ka:"სახურავის ფოლადის კარკასი"}],
+  ["p16",{tr:"Cam cepheli ticari bina",en:"Glass-facade commercial building",ru:"Коммерческое здание со стеклянным фасадом",ka:"კომერციული შენობა მინის ფასადით"}],
+  ["p17",{tr:"Kompozit panel cephe",en:"Composite panel facade",ru:"Фасад из композитных панелей",ka:"კომპოზიტური პანელის ფასადი"}],
+  ["p18",{tr:"Ticari bina cephesi",en:"Commercial building facade",ru:"Фасад коммерческого здания",ka:"კომერციული შენობის ფასადი"}]
 ];
 
 const SERVICES = [
@@ -412,7 +434,7 @@ tr:{
        ["Ticari Yapılar","Mağaza, showroom ve ofis binaları."],
        ["Özel Tasarım Çelik Yapılar","Projeye özel merdiven, kanopi, cephe ve platform çözümleri."],
        ["İmalat & Montaj","Atölyede imalat, sahada montaj."]],
-  ref_title:"Referanslarımız", ref_sub:"Batum ve Tiflis’te gerçekleştirdiğimiz projelerden bazıları.",
+  ref_title:"Referanslarımız", ref_sub:"Sahadan ve atölyeden gerçekleştirdiğimiz işlerden kareler.",
   batumi:"Batum", tbilisi:"Tiflis",
   ct_title:"Projenizi konuşalım", ct_sub:"Bizi arayın, WhatsApp’tan yazın veya formu doldurun; en kısa sürede dönüş yapalım.",
   phone:"Telefon", call:"Ara", email:"E-posta", address:"Adres", addr:"Kakhuli Sk. No: 3, Batum, Gürcistan",
@@ -444,7 +466,7 @@ en:{
        ["Commercial Buildings","Retail, showroom and office buildings."],
        ["Custom Steel Structures","Project-specific stairs, canopies, facades and platforms."],
        ["Fabrication & Assembly","Workshop fabrication and on-site assembly."]],
-  ref_title:"Our References", ref_sub:"A selection of projects we have completed in Batumi and Tbilisi.",
+  ref_title:"Our References", ref_sub:"Snapshots from our sites and workshop.",
   batumi:"Batumi", tbilisi:"Tbilisi",
   ct_title:"Let’s talk about your project", ct_sub:"Call us, message us on WhatsApp or fill in the form, and we’ll get back to you soon.",
   phone:"Phone", call:"Call", email:"Email", address:"Address", addr:"3 Kakhuli St., Batumi, Georgia",
@@ -476,7 +498,7 @@ ru:{
        ["Коммерческие здания","Магазины, шоурумы и офисные здания."],
        ["Индивидуальные конструкции","Лестницы, навесы, фасады и площадки под проект."],
        ["Изготовление и монтаж","Производство в цехе и монтаж на объекте."]],
-  ref_title:"Наши проекты", ref_sub:"Некоторые из объектов, реализованных нами в Батуми и Тбилиси.",
+  ref_title:"Наши проекты", ref_sub:"Кадры с наших объектов и из цеха.",
   batumi:"Батуми", tbilisi:"Тбилиси",
   ct_title:"Обсудим ваш проект", ct_sub:"Позвоните, напишите в WhatsApp или заполните форму — мы скоро свяжемся с вами.",
   phone:"Телефон", call:"Позвонить", email:"Эл. почта", address:"Адрес", addr:"ул. Кахули, 3, Батуми, Грузия",
@@ -508,7 +530,7 @@ ka:{
        ["კომერციული შენობები","მაღაზიები, შოურუმები და საოფისე შენობები."],
        ["ინდივიდუალური ნაგებობები","პროექტზე მორგებული კიბეები, ფარდულები, ფასადები და პლატფორმები."],
        ["დამზადება და მონტაჟი","საამქროში დამზადება და ობიექტზე მონტაჟი."]],
-  ref_title:"ჩვენი პროექტები", ref_sub:"ბათუმსა და თბილისში განხორციელებული პროექტების ნაწილი.",
+  ref_title:"ჩვენი პროექტები", ref_sub:"კადრები ჩვენი ობიექტებიდან და საამქროდან.",
   batumi:"ბათუმი", tbilisi:"თბილისი",
   ct_title:"განვიხილოთ თქვენი პროექტი", ct_sub:"დაგვირეკეთ, მოგვწერეთ WhatsApp-ზე ან შეავსეთ ფორმა — მალე დაგიკავშირდებით.",
   phone:"ტელეფონი", call:"დარეკვა", email:"ელფოსტა", address:"მისამართი", addr:"ქახულის ქ. №3, ბათუმი, საქართველო",
@@ -517,13 +539,6 @@ ka:{
   f_note:"ღილაკზე დაჭერისას გაიხსნება თქვენი ელფოსტის აპლიკაცია.", f_subject:"შეთავაზების მოთხოვნა",
   rights:"ყველა უფლება დაცულია.", top:"ზემოთ ↑"
 }
-};
-
-const ART = {
-  frame:'<g stroke="#e39a62" stroke-width="3" fill="none" stroke-linejoin="round"><path d="M40 230V120l160-60 160 60v110"/><path d="M90 230V101M150 230V79M250 230V79M310 230V101"/><path d="M40 120l50 -19 60 22 50-63 50 63 60-22 50 19" opacity=".6"/><path d="M90 150l60 30M150 150l-60 30M250 150l60 30M310 150l-60 30" opacity=".5"/></g><path d="M20 230h360" stroke="#c4652f" stroke-width="4"/>',
-  truss:'<g stroke="#e39a62" stroke-width="3" fill="none"><path d="M30 230V140Q200 30 370 140v90"/><path d="M30 140h340" opacity=".7"/><path d="M30 140L80 100 110 140 150 80 190 140 230 72 270 140 300 92 340 140" opacity=".55"/><path d="M110 230v-90M200 230v-90M290 230v-90" opacity=".4"/></g><path d="M15 230h370" stroke="#c4652f" stroke-width="4"/>',
-  tower:'<g stroke="#e39a62" stroke-width="3" fill="none"><rect x="110" y="50" width="180" height="180"/><path d="M110 95h180M110 140h180M110 185h180M170 50v180M230 50v180"/><path d="M110 50l60 45M170 95l60 45M230 140l60 45" opacity=".5"/></g><path d="M40 230h320" stroke="#c4652f" stroke-width="4"/>',
-  canopy:'<g stroke="#e39a62" stroke-width="3" fill="none" stroke-linejoin="round"><path d="M60 110l140-45 140 45"/><path d="M60 110L200 130 340 110" opacity=".6"/><path d="M110 230V118M290 230V118M200 230V130"/><path d="M60 110l50 8 40-35 50 47 50-47 40 35 50-8" opacity=".5"/></g><path d="M30 230h340" stroke="#c4652f" stroke-width="4"/>'
 };
 
 let lang = 'tr';
@@ -536,14 +551,25 @@ function renderServices(t){
       <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">${SERVICES[i].ic}</svg></div>
       <h3>${s[0]}</h3><p>${s[1]}</p></article>`).join('');
 }
-function renderRefs(t){
-  $('#refGrid').innerHTML = REFERENCES.map(r=>`
-    <article class="ref reveal in">
-      <div class="pic">${r.img?`<img src="${r.img}" alt="${r.type[lang]}" loading="lazy">`:`<svg viewBox="0 0 400 260" aria-hidden="true">${ART[r.art]||ART.frame}</svg>`}
-        <span class="tag">${t[r.city]}</span></div>
-      <div class="info"><h3>${r.type[lang]}</h3><p>MR Steel · ${t[r.city]}</p></div>
-    </article>`).join('');
+function renderRefs(){
+  $('#refGrid').innerHTML = REFERENCES.map((r,i)=>`
+    <figure class="shot reveal in" role="button" tabindex="0" data-i="${i}">
+      <img src="assets/projects/${r[0]}-t.jpg" alt="${r[1][lang]}" loading="lazy">
+      <figcaption>${r[1][lang]}</figcaption></figure>`).join('');
 }
+const lb=$('#lb'); let cur=0;
+function showLb(i){cur=(i+REFERENCES.length)%REFERENCES.length;const r=REFERENCES[cur];
+  $('img',lb).src=`assets/projects/${r[0]}.jpg`;$('img',lb).alt=r[1][lang];$('p',lb).textContent=`${r[1][lang]} — ${cur+1}/${REFERENCES.length}`;
+  lb.classList.add('open');document.body.style.overflow='hidden';}
+function closeLb(){lb.classList.remove('open');document.body.style.overflow='';}
+$('#refGrid').addEventListener('click',e=>{const f=e.target.closest('.shot');if(f)showLb(+f.dataset.i)});
+$('#refGrid').addEventListener('keydown',e=>{const f=e.target.closest('.shot');if(f&&(e.key==='Enter'||e.key===' ')){e.preventDefault();showLb(+f.dataset.i)}});
+$('.x',lb).onclick=closeLb;$('.pv',lb).onclick=()=>showLb(cur-1);$('.nx',lb).onclick=()=>showLb(cur+1);
+lb.addEventListener('click',e=>{if(e.target===lb)closeLb()});
+addEventListener('keydown',e=>{if(!lb.classList.contains('open'))return;if(e.key==='Escape')closeLb();if(e.key==='ArrowLeft')showLb(cur-1);if(e.key==='ArrowRight')showLb(cur+1)});
+let tx=0;lb.addEventListener('touchstart',e=>{tx=e.touches[0].clientX},{passive:true});
+lb.addEventListener('touchend',e=>{const d=e.changedTouches[0].clientX-tx;if(Math.abs(d)>50)showLb(cur+(d<0?1:-1))});
+
 function setLang(l){
   if(!I18N[l]) l='tr';
   lang=l; const t=I18N[l];
@@ -552,7 +578,7 @@ function setLang(l){
   $('meta[name="description"]').setAttribute('content',t.desc);
   $$('[data-i18n]').forEach(el=>{const v=t[el.dataset.i18n]; if(typeof v==='string') el.textContent=v;});
   $$('.langs button').forEach(b=>b.setAttribute('aria-pressed',b.dataset.lang===l));
-  renderServices(t); renderRefs(t);
+  renderServices(t); renderRefs();
   try{localStorage.setItem('mrsteel_lang',l)}catch(e){}
   const u=new URL(location.href); u.searchParams.set('lang',l); history.replaceState(null,'',u);
 }
